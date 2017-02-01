@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.stage.Screen?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<!--
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+    xmlns="http://javafx.com/javafx/2.2"
+    fx:controller="com.skcs.kiosk.ScreenIdle"
+    fx:id="root"
+    style="-fx-background-color: WHITE;"
+    prefWidth="${screen.visualBounds.width}"
+    prefHeight="${screen.visualBounds.height}"
+    >
+    <fx:define>
+        <Screen fx:factory="getPrimary" fx:id="screen"/>
+    </fx:define>
+-->
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/2.2"
+            fx:controller="com.skcs.kiosk.ScreenIdle"
+            fx:id="root"
+            style="-fx-background-color: WHITE;"
+            prefWidth="1024"
+            prefHeight="768"
+    >
+
+    <VBox fx:id="vboxContainer" alignment="CENTER"
+          AnchorPane.topAnchor="0.0"
+    >
+        <children>
+
+            <ImageView fx:id="imgViewWelcome"
+                fitWidth="1024"
+                fitHeight="768"
+                />
+
+
+        </children>
+    </VBox>
+
+    <Label fx:id="lblDispTime"
+            alignment="CENTER"
+           style="-fx-font-family: Open Sans Condensed Light;
+	                -fx-font-size: 64px;
+                    -fx-text-fill: WHITE;
+                    -fx-font-style: Normal;"
+           prefWidth="1024"
+           prefHeight="80"
+           AnchorPane.topAnchor="80.0"
+           AnchorPane.leftAnchor="0.0"
+        AnchorPane.rightAnchor="0.0"
+    >
+    </Label>
+    <Label fx:id="lblDispDate"
+           alignment="CENTER"
+           style="
+           -fx-font-family: Open Sans Condensed Light;
+	                -fx-font-size: 24px;
+                    -fx-text-fill: WHITE;
+                    -fx-font-weight: Normal;"
+           prefWidth="1024"
+           prefHeight="80"
+           AnchorPane.topAnchor="120.0"
+           AnchorPane.leftAnchor="0.0"
+           AnchorPane.rightAnchor="0.0"
+    >
+    </Label>
+</AnchorPane>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.stage.Screen?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<!--
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+    xmlns="http://javafx.com/javafx/2.2"
+    fx:controller="com.skcs.kiosk.ScreenIdle"
+    fx:id="root"
+    style="-fx-background-color: WHITE;"
+    prefWidth="${screen.visualBounds.width}"
+    prefHeight="${screen.visualBounds.height}"
+    >
+    <fx:define>
+        <Screen fx:factory="getPrimary" fx:id="screen"/>
+    </fx:define>
+-->
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.PasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.layout.Pane?>
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           xmlns="http://javafx.com/javafx/2.2"
+           fx:controller="com.skcs.kiosk.ScreenTestDriver"
+           fx:id="root"
+           style="-fx-background-color: c5ccd4ff;"
+           prefWidth="1024"
+           prefHeight="768">
+    <VBox fx:id="vboxcontainer" spacing="16">
+
+        <children>
+
+            <AnchorPane VBox.vgrow="ALWAYS">
+                <VBox alignment="CENTER"
+                      AnchorPane.topAnchor="0"
+                      AnchorPane.leftAnchor="0"
+                      AnchorPane.rightAnchor="0"
+                >
+                    <children>
+                        <HBox fx:id="vboxLangTitle" alignment="CENTER" styleClass="ipad-dark-grey" prefHeight="88">
+                            <children>
+                                <ImageView fx:id="imgViewLogo"
+                                           fitWidth="320"
+                                           preserveRatio="true"
+                                /><Label fx:id="lblScreenTitleTop"
+                                         styleClass="title"
+                                         style="-fx-padding: 0;"></Label>
+                                <Pane HBox.hgrow="ALWAYS" />
+                                <Label fx:id="lblScreenTitle"
+                                       styleClass="title"
+                                       style="-fx-padding: 0 16;">Test Utility</Label>
+                            </children>
+                        </HBox>
+                        <!-- Menu List Test Driver -->
+                                <VBox alignment="TOP_CENTER" fx:id="Left" prefWidth="1024" maxHeight="660"
+                                      style="-fx-background-color: c5ccd4ff; -fx-padding : 16 0 0 0;">
+                                    <children >
+                                        <!-- Menu list -->
+                                        <HBox alignment="CENTER_LEFT" fx:id="hboxlabel" prefWidth="1024"
+                                              style="-fx-background-color: f7f7f7ff; -fx-border-color: c5ccd4ff; -fx-padding : 0 0 0 20;">
+                                            <children >
+                                                <Label alignment="BASELINE_LEFT" fx:id="labelCamera" text="Test Camera Capture"
+                                                       style="-fx-background-color: f7f7f7ff;
+                                               -fx-font-family: Ubuntu; -fx-font-size: 21px; -fx-text-fill: GREY;"
+                                                       prefWidth="813" prefHeight="70" />
+                                                <JFXButton
+                                                        style="-fx-background-color : f7f7f7ff;"
+                                                        fx:id="btnCamera"
+                                                        prefWidth="150"
+                                                        prefHeight="65"
+                                                        styleClass="button-nav"
+                                                        buttonType="FLAT" />
+                                            </children></HBox>
+                                        <HBox alignment="CENTER_LEFT" fx:id="hboxlabel" prefWidth="1024"
+                                              style="-fx-background-color: f7f7f7ff; -fx-border-color: c5ccd4ff; -fx-padding : 0 0 0 20;">
+                                            <children >
+                                                <Label alignment="BASELINE_LEFT" fx:id="labelPinpad" text="Check Status Pinpad"
+                                                       style="-fx-background-color: f7f7f7ff;
+                                               -fx-font-family: Ubuntu; -fx-font-size: 21px; -fx-text-fill: GREY;"
+                                                       prefWidth="810" prefHeight="70" />
+                                                <JFXButton
+                                                        style="-fx-background-color : f7f7f7ff;"
+                                                        fx:id="btnPinpad"
+                                                        prefWidth="150"
+                                                        prefHeight="65"
+                                                        styleClass="button-nav"
+                                                        buttonType="FLAT" />
+                                            </children></HBox>
+                                        <HBox alignment="CENTER_LEFT" fx:id="hboxlabel" prefWidth="1024"
+                                              style="-fx-background-color: f7f7f7ff; -fx-border-color: c5ccd4ff; -fx-padding : 0 0 0 20;">
+                                            <children >
+                                                <Label alignment="BASELINE_LEFT" fx:id="labelPrinter" text="Test Printer Print"
+                                                       style="-fx-background-color: f7f7f7ff;
+                                               -fx-font-family: Ubuntu; -fx-font-size: 21px; -fx-text-fill: GREY;"
+                                                       prefWidth="810" prefHeight="70" />
+                                                <JFXButton
+                                                        style="-fx-background-color : f7f7f7ff;"
+                                                        fx:id="btnPrinter"
+                                                        prefWidth="150"
+                                                        prefHeight="65"
+                                                        styleClass="button-nav"
+                                                        buttonType="FLAT" />
+                                            </children></HBox>
+                                        <HBox alignment="CENTER_LEFT" fx:id="hboxlabel" prefWidth="1024"
+                                              style="-fx-background-color: f7f7f7ff; -fx-border-color: c5ccd4ff; -fx-padding : 0 0 0 20;">
+                                            <children >
+                                                <Label alignment="BASELINE_LEFT" fx:id="labelSpeaker" text="Test Play Audio"
+                                                       style="-fx-background-color: f7f7f7ff;
+                                               -fx-font-family: Ubuntu; -fx-font-size: 21px; -fx-text-fill: GREY;"
+                                                       prefWidth="810" prefHeight="70" />
+                                                <JFXButton
+                                                        style="-fx-background-color : f7f7f7ff;"
+                                                        fx:id="btnSpeaker"
+                                                        prefWidth="150"
+                                                        prefHeight="65"
+                                                        styleClass="button-nav"
+                                                        buttonType="FLAT" />
+                                            </children></HBox>
+
+                                        <!--Button Change Password and Log Out-->
+                                        <HBox alignment="CENTER_LEFT" style="-fx-background-color: c5ccd4ff; ">
+                                            <children>
+                                                <VBox alignment="BOTTOM_LEFT" style="-fx-background-color: c5ccd4ff;" prefWidth="504" prefHeight="349">
+
+                                                    <HBox fx:id="mainMenuNavbar" styleClass="navbar" >
+                                                        <children>
+
+                                                            <JFXButton
+                                                                    alignment="BASELINE_LEFT"
+                                                                    style="-fx-padding : 0 0 0 30;"
+                                                                    fx:id="btnBack"
+                                                                    prefWidth="200"
+                                                                    prefHeight="64"
+                                                                    styleClass="button-nav"
+                                                                    buttonType="FLAT"
+                                                                    text="BACK"/>
+                                                        </children>
+                                                    </HBox>
+
+                                                    <!-- <JFXButton alignment="BASELINE_LEFT" text="SUBMIT" textFill="green" prefWidth="500" prefHeight="40" /> -->
+                                                </VBox>
+                                                <VBox alignment="BOTTOM_RIGHT" style="-fx-background-color: c5ccd4ff;" prefWidth="520" prefHeight="349">
+
+
+                                                    <HBox fx:id="mainMenuNavbar" styleClass="navbar" >
+                                                        <children>
+
+                                                            <Pane HBox.hgrow="ALWAYS"/>
+                                                            <JFXButton
+                                                                    alignment="BASELINE_RIGHT"
+                                                                    style="-fx-padding : 0 30 0 0;"
+                                                                    fx:id="btnOut"
+                                                                    prefWidth="200"
+                                                                    prefHeight="64"
+                                                                    styleClass="button-nav"
+                                                                    buttonType="FLAT"
+                                                                    text="LOGOUT"/>
+                                                        </children>
+                                                    </HBox>
+
+                                                    <!-- <JFXButton alignment="CENTER_RIGHT" text="CANCEL" textFill="RED" prefWidth="500" prefHeight="40" /> -->
+                                                </VBox>
+                                            </children></HBox>
+
+
+                                    </children>
+                                </VBox>
+                    </children>
+                </VBox>
+            </AnchorPane>
+        </children>
+    </VBox>
+</StackPane>

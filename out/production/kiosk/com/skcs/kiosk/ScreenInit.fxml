@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.*?>
+<?import javafx.stage.Screen?>
+<!--
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+    xmlns="http://javafx.com/javafx/2.2"
+    fx:controller="com.skcs.kiosk.ScreenInit"
+    fx:id="root"
+    prefWidth="${screen.visualBounds.width}"
+    prefHeight="${screen.visualBounds.height}"
+    >
+    <fx:define>
+        <Screen fx:factory="getPrimary" fx:id="screen"/>
+    </fx:define>
+-->
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+    xmlns="http://javafx.com/javafx/2.2"
+    fx:controller="com.skcs.kiosk.ScreenInit"
+    fx:id="root"
+    prefWidth="1024"
+    prefHeight="768"
+    >
+    <VBox fx:id="vboxContainer" spacing="16" >
+        <children>
+            <Pane VBox.vgrow="ALWAYS" />
+
+            <HBox fx:id="initNavbar" style="-fx-padding: 0 0 16 0" spacing="16">
+                <children>
+                    <Pane HBox.hgrow="NEVER"/>
+                    <ProgressIndicator
+                        fx:id="serviceRunningIndicator"
+                        prefHeight="24.0"
+                        prefWidth="24.0"
+                        />
+                    <Label
+                        fx:id="lblSwipeCard"
+                        prefHeight="48"
+                        />
+                </children>
+            </HBox>
+
+            <Pane VBox.vgrow="NEVER" />
+        </children>
+    </VBox>
+</StackPane>

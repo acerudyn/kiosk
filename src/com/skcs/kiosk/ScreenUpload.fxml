@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.stage.Screen?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.PasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.control.Separator?>
+
+<?import com.sun.deploy.uitoolkit.impl.fx.ui.ErrorPane?>
+<?import com.jfoenix.validation.ValidationFacade?>
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           xmlns="http://javafx.com/javafx/2.2"
+           fx:controller="com.skcs.kiosk.ScreenUpload"
+           fx:id="root"
+           style="-fx-background-color: c5ccd4ff;"
+           prefWidth="1024"
+           prefHeight="768">
+    <VBox fx:id="vboxcontainer" spacing="16">
+
+        <children>
+
+            <AnchorPane VBox.vgrow="ALWAYS">
+                <VBox alignment="CENTER"
+                      AnchorPane.topAnchor="0"
+                      AnchorPane.leftAnchor="0"
+                      AnchorPane.rightAnchor="0"
+                >
+                    <children>
+                        <HBox fx:id="vboxLangTitle" alignment="CENTER" styleClass="ipad-dark-grey" prefHeight="88">
+                            <children>
+                                <ImageView fx:id="imgViewLogo"
+                                           fitWidth="320"
+                                           preserveRatio="true"
+                                /><Label fx:id="lblScreenTitleTop"
+                                         styleClass="title"
+                                         style="-fx-padding: 0;"></Label>
+                                <Pane HBox.hgrow="ALWAYS" />
+                                <Label fx:id="lblScreenTitle"
+                                       styleClass="title"
+                                       style="-fx-padding: 0 16;">Screen Upload</Label>
+                            </children>
+                        </HBox>
+
+                        <VBox alignment="TOP_CENTER" fx:id="Left" prefWidth="1024" prefHeight="760"
+                              style="-fx-background-color: c5ccd4ff; -fx-padding: 10 0 0 0;">
+                            <children >
+                                <HBox alignment="BASELINE_CENTER" fx:id="hboxlabel" maxWidth="1000" prefHeight="470"
+                                      style="-fx-background-color: f7f7f7ff; -fx-padding : 20 0 0 0;">
+                                    <children >
+                                        <!-- Frame red -->
+                                        <VBox prefHeight="430" prefWidth="600" opacity=".75" alignment="TOP_CENTER"
+                                              style="-fx-border-color: RED; -fx-padding : 40 0 0 0;
+                                                     -fx-border-width: 2; -fx-border-style: solid;">
+                                            <children>
+                                                <Label style=" -fx-font-size : 22; -fx-border-width : 10; -fx-border-color : f7f7f7ff;"
+                                                       textFill="black" alignment="BASELINE_CENTER" prefHeight="100" prefWidth="350"
+                                                       text="Press Button to Upload Logo"></Label>
+                                                <HBox style="-fx-background-color : RED; -fx-border-width : 10; -fx-border-color : f7f7f7ff;"
+                                                       maxWidth="200" prefHeight="100" alignment="CENTER" >
+                                                    <JFXButton
+                                                            alignment="BASELINE_CENTER"
+                                                            style="-fx-padding : 8 0 8 0;"
+                                                            fx:id="btnPinpad"
+                                                            prefWidth="180"
+                                                            prefHeight="70"
+                                                            buttonType="FLAT"
+                                                            styleClass="button-nav2"
+                                                            text="Pinpad"/>
+                                                </HBox>
+                                                <HBox style="-fx-background-color : RED; -fx-border-width : 10; -fx-border-color : f7f7f7ff;"
+                                                       maxWidth="200" prefHeight="100" alignment="CENTER">
+                                                    <JFXButton
+                                                            alignment="BASELINE_CENTER"
+                                                            style="-fx-padding : 8 0 8 0; "
+                                                            fx:id="btnPrinter"
+                                                            prefWidth="180"
+                                                            prefHeight="70"
+                                                            buttonType="FLAT"
+                                                            styleClass="button-nav2"
+                                                            text="Printer"/>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <!-- Button OK Cancel -->
+                                <HBox prefHeight="190" prefWidth="1000" style="-fx-background-color : c5ccd4ff;" alignment="BOTTOM_LEFT">
+                                    <children>
+                                        <HBox maxHeight="80" prefWidth="520" style="-fx-background-color : #28c14c;" opacity=".75" >
+                                            <JFXButton
+                                                    alignment="BASELINE_LEFT"
+                                                    style="-fx-padding : 0 0 0 30;"
+                                                    fx:id="btnBack"
+                                                    prefWidth="200"
+                                                    prefHeight="64"
+                                                    styleClass="button-nav"
+                                                    buttonType="FLAT"
+                                                    text="BACK"/>
+                                        </HBox>
+                                        <HBox maxHeight="80" prefWidth="510"  alignment="BASELINE_RIGHT"
+                                              style="-fx-background-color : #28c14c;" opacity=".75">
+                                            <JFXButton
+                                                    alignment="BASELINE_RIGHT"
+                                                    style="-fx-padding : 0 30 0 0;"
+                                                    fx:id="btnOut"
+                                                    prefWidth="200"
+                                                    prefHeight="64"
+                                                    styleClass="button-nav"
+                                                    buttonType="FLAT"
+                                                    text="LOGOUT"/>
+                                        </HBox>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                    </children>
+                </VBox>
+            </AnchorPane>
+        </children>
+    </VBox>
+</StackPane>

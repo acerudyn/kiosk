@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.stage.Screen?>
+<!--
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+    xmlns="http://javafx.com/javafx/2.2"
+    fx:controller="com.skcs.kiosk.ScreenSwipeCard"
+    fx:id="root"
+    prefWidth="${screen.visualBounds.width}"
+    prefHeight="${screen.visualBounds.height}"
+    >
+    <fx:define>
+        <Screen fx:factory="getPrimary" fx:id="screen"/>
+    </fx:define>
+-->
+<?import javafx.scene.image.ImageView?>
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           xmlns="http://javafx.com/javafx/2.2"
+           fx:controller="com.skcs.kiosk.ScreenProcTran"
+           fx:id="root"
+           prefWidth="1024"
+           prefHeight="768"
+    >
+    <VBox fx:id="vboxContainer" spacing="16" >
+        <children>
+
+            <AnchorPane VBox.vgrow="ALWAYS">
+                <VBox alignment="CENTER"
+                      AnchorPane.topAnchor="0"
+                      AnchorPane.leftAnchor="0"
+                      AnchorPane.rightAnchor="0"
+                    >
+                    <children>
+                        <HBox fx:id="vboxLangTitle" alignment="CENTER" styleClass="ipad-dark-grey" prefHeight="88">
+                            <children>
+                                <ImageView fx:id="imgViewLogo"
+                                    fitWidth="320"
+                                    preserveRatio="true"
+                                    />
+                                <Pane HBox.hgrow="ALWAYS"/>
+                                <Label
+                                    fx:id="lblScreenTitle"
+                                    styleClass="title"
+                                    style="-fx-padding:0 16;"
+                                    >
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+
+                <AnchorPane fx:id="hboxProcTranHint"
+                    AnchorPane.topAnchor="160"
+                    AnchorPane.leftAnchor="80"
+                    AnchorPane.rightAnchor="80"
+                    prefHeight="440"
+                    style="-fx-border-color: #cecece; -fx-border-radius:4"
+                    >
+                    <Label fx:id="lblProcTranHint"
+                        AnchorPane.topAnchor="16"
+                        AnchorPane.leftAnchor="4"
+                        AnchorPane.rightAnchor="4"
+                        AnchorPane.bottomAnchor="4"
+                        alignment="TOP_CENTER"
+                        textAlignment="CENTER"
+                        lineSpacing="8"
+                        style="-fx-font-family: Ubuntu;
+	                    -fx-font-size: 24px;
+                        -fx-text-fill: BLACK;
+                        -fx-font-weight: Bold;"
+                        />
+                    <HBox alignment="CENTER"
+                        AnchorPane.topAnchor="96"
+                        AnchorPane.leftAnchor="4"
+                        AnchorPane.rightAnchor="4"
+                        >
+                        <children>
+                            <ProgressIndicator
+                                fx:id="serviceProcIndicator"
+                                prefHeight="24.0"
+                                prefWidth="24.0"
+                                style="-fx-progress-color: GRAY"
+                                />
+                        </children>
+                    </HBox>
+
+                    <ImageView fx:id="imgViewProcTran"
+                            AnchorPane.leftAnchor="4"
+                            AnchorPane.rightAnchor="4"
+                            AnchorPane.bottomAnchor="4"
+                            preserveRatio="true"
+                            fitWidth="856"
+
+                        />
+                </AnchorPane>
+            </AnchorPane>
+
+            <HBox fx:id="procTranNavbar" styleClass="navbar" style="-fx-padding: 0 0 0 0" alignment="CENTER_RIGHT" spacing="16">
+                <children>
+                    <Label
+                        fx:id="lblProcTranStatus"
+                        prefHeight="64"
+                        styleClass="button-nav"
+                        />
+                    <ProgressIndicator
+                        fx:id="serviceRunningIndicator"
+                        prefHeight="24.0"
+                        prefWidth="24.0"
+                        style="-fx-progress-color: WHITE"
+                    />
+                    <Pane HBox.hgrow="NEVER"/>
+                </children>
+            </HBox>
+
+        </children>
+    </VBox>
+
+    <JFXDialog fx:id="dialogOk" overlayClose="false">
+        <JFXDialogLayout>
+            <heading>
+                <Label fx:id="dialogTitleOk"></Label>
+            </heading>
+            <body>
+                <Label fx:id="dialogMessageOk">
+                </Label>
+            </body>
+            <actions>
+                <JFXButton fx:id="dialogButtonOk" styleClass="dialog-accept">
+                    OK
+                </JFXButton>
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+
+    <JFXDialog fx:id="dialogYesNo" overlayClose="false">
+        <JFXDialogLayout>
+            <heading>
+                <Label fx:id="dialogTitleYesNo"></Label>
+            </heading>
+            <body>
+                <Label fx:id="dialogMessageYesNo">
+                </Label>
+            </body>
+            <actions>
+                <JFXButton fx:id="dialogButtonLeft" styleClass="dialog-accept">
+                    YES
+                </JFXButton>
+                <JFXButton fx:id="dialogButtonRight" styleClass="dialog-accept">
+                    NO
+                </JFXButton>
+            </actions>
+        </JFXDialogLayout>
+    </JFXDialog>
+
+</StackPane>

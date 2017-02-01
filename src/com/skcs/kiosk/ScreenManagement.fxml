@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.stage.Screen?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.collections.*?>
+<?import javafx.geometry.Insets?>
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import fxmltableview.*?>
+
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.PasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.control.Separator?>
+
+<?import com.sun.deploy.uitoolkit.impl.fx.ui.ErrorPane?>
+<?import com.jfoenix.validation.ValidationFacade?>
+<?import com.sun.javafx.scene.control.skin.TableHeaderRow?>
+<?import javafx.scene.text.TextFlow?>
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           xmlns="http://javafx.com/javafx/2.2"
+           fx:controller="com.skcs.kiosk.ScreenManagement"
+           fx:id="root"
+           style="-fx-background-color: c5ccd4ff;"
+           prefWidth="1024"
+           prefHeight="768">
+    <VBox fx:id="vboxcontainer" spacing="16">
+
+        <children>
+
+        <AnchorPane VBox.vgrow="ALWAYS">
+        <VBox alignment="CENTER"
+              AnchorPane.topAnchor="0"
+              AnchorPane.leftAnchor="0"
+              AnchorPane.rightAnchor="0"
+        >
+            <children>
+                <HBox fx:id="vboxLangTitle" alignment="CENTER" styleClass="ipad-dark-grey" prefHeight="88">
+                    <children>
+                        <ImageView fx:id="imgViewLogo"
+                                   fitWidth="320"
+                                   preserveRatio="true"
+                        /><Label fx:id="lblScreenTitleTop"
+                                 styleClass="title"
+                                 style="-fx-padding: 0;"></Label>
+                        <Pane HBox.hgrow="ALWAYS" />
+                        <Label fx:id="lblScreenTitle"
+                                styleClass="title"
+                                style="-fx-padding: 0 16;">User Management</Label>
+                    </children>
+                </HBox>
+
+             <!--   <ScrollPane fx:id="sasd" style=" -fx-padding: 8; -fx-background-color: c5ccd4ff;" >
+                    <content>  -->
+                        <VBox alignment="TOP_CENTER" fx:id="Left" prefWidth="1000" prefHeight="653"
+                              style="-fx-background-color: c5ccd4ff; -fx-padding: 16 0 0 0;">
+                            <children >
+                            <!-- view table and button right side table -->
+                                    <HBox alignment="TOP_LEFT" prefWidth="970" prefHeight="400"
+                                          style="-fxc-background-color : ORANYE; -fx-padding: 0 0 0 16;">
+                                        <children>
+                                    <TableView fx:id="table" prefHeight="400" prefWidth="770" editable="true">
+                                        <columns>
+                                            <TableColumn fx:id="IdCol" text="User ID" prefWidth="190" editable="true"  >
+                                            </TableColumn>
+                                            <TableColumn fx:id="username" text="Username" prefWidth="190">
+                                            </TableColumn>
+                                            <TableColumn fx:id="pwd" text="Password" prefWidth="190" >
+                                            </TableColumn>
+                                            <TableColumn fx:id="akses" text="Role" prefWidth="198">
+                                            </TableColumn>
+                                        </columns>
+                                    </TableView>
+
+                                            <!-- Button side table -->
+                                            <VBox prefWidth="220" alignment="TOP_LEFT"
+                                                  style="-fx-background-color : c5ccd4ff; -fx-padding: 0 0 0 16;">
+                                                <children>
+                                                    <HBox  prefWidth="220" alignment="TOP_LEFT" opacity=".75"
+                                                          style="-fx-background-color : RED; -fx-border-color: c5ccd4ff;
+                                                          -fx-border-width: 3; -fx-border-style: solid;" >
+                                                        <children>
+                                                            <JFXButton
+                                                                    alignment="BASELINE_LEFT"
+                                                                    style="-fx-padding : 0 0 0 10;"
+                                                                    fx:id="btnAdd"
+                                                                    prefWidth="210"
+                                                                    prefHeight="64"
+                                                                    styleClass="button-nav"
+                                                                    buttonType="FLAT" />
+                                                        </children>
+                                                    </HBox>
+
+                                                    <HBox  prefWidth="220" alignment="TOP_LEFT" opacity=".75"
+                                                          style="-fx-background-color : RED; -fx-border-color: c5ccd4ff;-fx-border-color: c5ccd4ff;
+                                                          -fx-border-width: 3; -fx-border-style: solid; ">
+                                                        <children>
+                                                            <JFXButton
+                                                                    alignment="BASELINE_LEFT"
+                                                                    style="-fx-padding : 0 0 0 10;"
+                                                                    fx:id="btnEdit"
+                                                                    prefWidth="210"
+                                                                    prefHeight="64"
+                                                                    styleClass="button-nav"
+                                                                    buttonType="FLAT"/>
+                                                        </children>
+                                                    </HBox>
+
+                                                    <HBox  prefWidth="220" alignment="TOP_LEFT" opacity=".75"
+                                                          style="-fx-background-color : RED; -fx-border-color: c5ccd4ff; -fx-border-color: c5ccd4ff;
+                                                          -fx-border-width: 3; -fx-border-style: solid;">
+                                                        <children>
+                                                            <JFXButton
+                                                                    alignment="BASELINE_LEFT"
+                                                                    style="-fx-padding : 0 0 0 10;"
+                                                                    fx:id="btnDelete"
+                                                                    prefWidth="210"
+                                                                    prefHeight="64"
+                                                                    styleClass="button-nav"
+                                                                    buttonType="FLAT"/>
+                                                        </children>
+                                                    </HBox>
+
+                                                    <HBox  prefWidth="220" alignment="TOP_LEFT" opacity=".75"
+                                                          style="-fx-background-color : RED; -fx-border-color: c5ccd4ff;
+                                                          -fx-border-width: 3; -fx-border-style: solid;">
+                                                        <children>
+                                                            <JFXButton
+                                                                    alignment="BASELINE_LEFT"
+                                                                    style="-fx-padding : 0 0 0 10;"
+                                                                    fx:id="btnView"
+                                                                    prefWidth="210"
+                                                                    prefHeight="64"
+                                                                    styleClass="button-nav"
+                                                                    buttonType="FLAT"/>
+                                                        </children>
+                                                    </HBox>
+                                                </children>
+                                            </VBox>
+                                        </children> </HBox>
+
+                                <!-- Capture Data Table to Text Field -->
+                                <HBox prefHeight="400" prefWidth="500" fx:id="hboxCapture"
+                                      style="-fx-padding : 20 0 0 16; -fx-background-color : c5ccd4ff;" >
+                                    <children>
+                                        <!-- Text Field User ID & Username -->
+                                        <VBox prefWidth="190" style="-fx-background-color : c5ccd4ff;">
+                                        <HBox maxHeight="100" maxWidth="170" style="-fx-background-color : c5ccd4ff; -fx-padding : 0 0 8 0;">
+                                            <TextField fx:id="textId" promptText="User ID" maxWidth="170" ></TextField> </HBox>
+                                        <HBox maxHeight="100" maxWidth="170" style="-fx-background-color : c5ccd4ff; -fx-padding : 0 0 8 0;">
+                                            <TextField fx:id="textUsername" promptText="Username" maxWidth="170"></TextField> </HBox>
+                                        </VBox>
+                                        <!-- Text Field Password & Role Akses -->
+                                        <VBox prefWidth="190" style="-fx-background-color : c5ccd4ff;">
+                                        <HBox maxHeight="100" maxWidth="170" style="-fx-background-color : c5ccd4ff; -fx-padding : 0 0 8 0;">
+                                            <PasswordField fx:id="textPassword" promptText="Password" maxWidth="170"></PasswordField> </HBox>
+                                        <HBox maxHeight="100" maxWidth="170" style="-fx-background-color : c5ccd4ff; -fx-padding : 0 0 8 0;">
+                                            <ComboBox fx:id="comboAkses" >
+                                                <items>
+                                                    <FXCollections fx:factory="observableArrayList">
+                                                        <String fx:value="Admin" />
+                                                        <String fx:value="User" />
+                                                        <String fx:value="Owner" />
+                                                        <String fx:value="Technical" />
+                                                    </FXCollections>
+                                                </items>
+                                                <value>
+                                                    <String fx:value="-Acsess-" />
+                                                </value>
+                                            </ComboBox> </HBox>
+                                            </VBox>
+                                        <!-- Button Update & Cancel -->
+                                        <VBox prefWidth="190" style="-fx-background-color : c5ccd4ff;">
+                                            <HBox maxHeight="100" maxWidth="170" style="-fx-background-color : c5ccd4ff; -fx-padding : 0 0 8 0;">
+                                                <JFXButton
+                                                        alignment="BASELINE_CENTER"
+                                                        style="-fx-border-color : #2c7af7; -fx-border-style : Solid;
+                                                               -fx-font-weight : bold; -fx-text-fill : #2c7af7; "
+                                                        fx:id="btnUpdate"
+                                                        prefWidth="100"
+                                                        prefHeight="30"
+                                                        text="UPDATE"
+                                                        buttonType="FLAT"/>
+                                            </HBox>
+                                            <HBox maxHeight="100" maxWidth="170" style="-fx-background-color : c5ccd4ff; -fx-padding : 0 0 8 0;">
+                                                <JFXButton
+                                                        alignment="BASELINE_CENTER"
+                                                        style="-fx-border-color : #2c7af7; -fx-border-style : Solid;
+                                                               -fx-font-weight : bold; -fx-text-fill : #2c7af7; "
+                                                        fx:id="btnCancel"
+                                                        prefWidth="100"
+                                                        prefHeight="30"
+                                                        text="CANCEL"
+                                                        buttonType="FLAT"/>
+                                            </HBox>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+
+                                <!-- Button BACK & LOGOUT -->
+                                <HBox alignment="CENTER_LEFT" style="-fx-background-color: c5ccd4ff; ">
+                                    <children>
+                                        <VBox alignment="BOTTOM_LEFT" style="-fx-background-color: c5ccd4ff;" prefWidth="510" prefHeight="330">
+
+                                            <HBox fx:id="mainMenuNavbar" styleClass="navbar" style="-fx-padding: 0 0 0 0; " >
+                                                <children>
+
+                                                    <JFXButton
+                                                            alignment="BASELINE_LEFT"
+                                                            style="-fx-padding : 0 0 0 30;"
+                                                            fx:id="btnBack"
+                                                            prefWidth="200"
+                                                            prefHeight="64"
+                                                            styleClass="button-nav"
+                                                            buttonType="FLAT"
+                                                            text="BACK"/>
+                                                </children>
+                                            </HBox>
+                                       </VBox>
+                                        <VBox alignment="BOTTOM_RIGHT" style="-fx-background-color: c5ccd4ff;" prefWidth="520" prefHeight="430">
+
+                                            <HBox fx:id="mainMenuNavbar" styleClass="navbar" style="-fx-padding: 0 0 0 0; ">
+                                                <children>
+
+                                                    <Pane HBox.hgrow="ALWAYS"/>
+                                                    <JFXButton
+                                                            alignment="BASELINE_RIGHT"
+                                                            style="-fx-padding : 0 30 0 0;"
+                                                            fx:id="btnOut"
+                                                            prefWidth="200"
+                                                            prefHeight="64"
+                                                            styleClass="button-nav"
+                                                            buttonType="FLAT"
+                                                            text="LOGOUT"/>
+                                                </children>
+                                            </HBox>
+                                       </VBox>
+                                  </children></HBox>
+                      </children>
+                  </VBox>
+            </children>
+        </VBox>
+        </AnchorPane>
+        </children>
+    </VBox>
+</StackPane>

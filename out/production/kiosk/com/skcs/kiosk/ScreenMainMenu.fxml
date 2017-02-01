@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.stage.Screen?>
+<?import javafx.scene.control.Button?>
+<!--
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           xmlns="http://javafx.com/javafx/2.2"
+           fx:controller="com.skcs.kiosk.ScreenMainMenu"
+           fx:id="root"
+           style="-fx-background-color: WHITE;"
+           prefWidth="${screen.visualBounds.width}"
+           prefHeight="${screen.visualBounds.height}"
+    >
+    <fx:define>
+        <Screen fx:factory="getPrimary" fx:id="screen"/>
+    </fx:define>
+-->
+<?import javafx.scene.image.ImageView?>
+<StackPane xmlns:fx="http://javafx.com/fxml/1"
+           xmlns="http://javafx.com/javafx/2.2"
+           fx:controller="com.skcs.kiosk.ScreenMainMenu"
+           fx:id="root"
+           style="-fx-background-color: WHITE;"
+           prefWidth="1024"
+           prefHeight="768"
+    >
+    <VBox fx:id="vboxContainer">
+        <children>
+            <BorderPane VBox.vgrow="ALWAYS" style="-fx-padding: 0 0 32 0">
+                <top >
+                    <HBox fx:id="vboxMenuTitle" alignment="CENTER" styleClass="ipad-dark-grey" prefHeight="88">
+                        <children>
+                            <ImageView fx:id="imgViewLogo"
+                                       fitWidth="320"
+                                       preserveRatio="true"
+
+                            />
+                            <Pane HBox.hgrow="ALWAYS"/>
+                            <Label
+                                    fx:id="lblMenuTitle"
+                                    styleClass="title"
+                                    style="-fx-padding:0 16;"
+                            >
+                                Bahasa
+                            </Label>
+                        </children>
+                    </HBox>
+                </top>
+                <center>
+
+                    <GridPane fx:id="gridpaneMenu" alignment="CENTER" style="-fx-background-color:WHITE; -fx-padding: 48 48 48 48" vgap="48" hgap="48">
+                        <children>
+                            <!-- row:0 -->
+
+                            <JFXButton
+                                    fx:id="btnBalanceInquiry"
+                                    prefWidth="200"
+                                    prefHeight="200"
+                                    styleClass="button-menu"
+                                    buttonType="RAISED"
+                                    style="-fx-text-fill:WHITE;"
+                                    GridPane.columnIndex="0"
+                                    GridPane.rowIndex="0"
+                            />
+
+                            <JFXButton
+                                    fx:id="btnChangePIN"
+                                    prefWidth="200"
+                                    prefHeight="200"
+                                    styleClass="button-menu"
+                                    buttonType="RAISED"
+                                    GridPane.columnIndex="1"
+                                    GridPane.rowIndex="0"
+                            />
+
+
+                            <!-- row:1 -->
+
+                            <JFXButton
+                                    fx:id="btnTransfer"
+                                    prefWidth="200"
+                                    prefHeight="200"
+                                    styleClass="button-menu"
+                                    buttonType="RAISED"
+                                    GridPane.columnIndex="0"
+                                    GridPane.rowIndex="1"
+                            />
+
+                            <JFXButton
+                                    fx:id="btnPurchase"
+                                    prefWidth="200"
+                                    prefHeight="200"
+                                    styleClass="button-menu"
+                                    buttonType="RAISED"
+                                    GridPane.columnIndex="1"
+                                    GridPane.rowIndex="1"
+                            />
+
+                        </children>
+                    </GridPane>
+                </center>
+            </BorderPane>
+
+            <HBox fx:id="mainMenuNavbar" styleClass="navbar" style="-fx-padding: 0 0 0 0;" alignment="CENTER" spacing="16">
+                <children>
+
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <JFXButton
+                            fx:id="btnCancel"
+                            prefWidth="200"
+                            prefHeight="64"
+                            styleClass="button-nav"
+                            buttonType="FLAT"
+                    />
+                </children>
+            </HBox>
+        </children>
+    </VBox>
+
+</StackPane>
